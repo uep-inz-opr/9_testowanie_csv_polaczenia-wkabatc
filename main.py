@@ -47,5 +47,5 @@ class SprawdzDzwoniacegoTest(unittest.TestCase):
 unittest.main(argv=[''], defaultTest='SprawdzDzwoniacegoTest', exit=False)
 
 if __name__ == '__main__':
-    print(MenadzerPolaczen(input()).pobierz_najczesciej_dzwoniacego())
+    print(MenadzerPolaczen(inputFile).pobierz_najczesciej_dzwoniacego())
     pass
