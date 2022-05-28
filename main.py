@@ -1,19 +1,18 @@
 import csv
 import unittest
 
-#separator = str(input())
 inputFile = str(input())
 
 calls_sum_dict = dict()
 
 with open(inputFile,'r') as fin: 
-    reader = csv.reader(fin, delimiter = ",")
+    reader = csv.DictReader(fin, delimiter = ",")
     headers = next(reader)
     for row in reader:
-        from_subscr = int(row[0])
+        from_subscr = int(row['From'])
         if from_subscr not in calls_sum_dict:
             calls_sum_dict[from_subscr] = 0
-        value = int(row[3])
+        value = int(row['Duration(seconds)'])
         calls_sum_dict[from_subscr] += value
 
 #print(max(calls_sum_dict.items(), key = lambda x:x[1]))
